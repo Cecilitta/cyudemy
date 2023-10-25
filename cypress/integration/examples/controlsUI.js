@@ -26,6 +26,20 @@ describe('handling web controls UI', () => {
         cy.get('#autocomplete').should('have.value', 'India')
     })
 
+    it ('automate visible/invisible elements',() =>{
+    cy.get('#displayed-text').as('textInput')
+    cy.get('@textInput').should('be.visible')
+    cy.get('#hide-textbox').click()
+    cy.get('@textInput').should('not.be.visible')
+    cy.get('#show-textbox').click()
+    cy.get('@textInput').should('be.visible')
+    })
+
+    it ('automate radioButtons',() =>{
+        cy.get('input[value="radio1"]').click().should('be.checked').and('have.value','radio1')
+        cy.get('input[value="radio2"]').click()
+        cy.get('input[value="radio1"]').should('not.be.checked')
+    })
     
- } )
+ })
 
