@@ -1,9 +1,9 @@
 /// <reference types="Cypress" />
 
 
-describe('My First Test', () => {
+describe('Search products and validate logo brand', () => {
 
-    it('Search products!', () => {
+    it('Search products', () => {
       cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
       cy.get('input[type="search"]').clear().type('ca')
       cy.wait(2000)
@@ -19,7 +19,7 @@ describe('My First Test', () => {
       })
     })
 
-    it ('log brand', () => {
+    it ('logo brand', () => {
       cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
       cy.get('.brand').then(function(logoElement){
         cy.log(logoElement.text())

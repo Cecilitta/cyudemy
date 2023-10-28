@@ -1,9 +1,9 @@
 /// <reference types="Cypress" />
 
 
-describe('My second test', () => {
+describe('select products and checkOut', () => {
 
-    it('Select products', () => {
+    it('Select products and checkOut', () => {
       cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
       cy.get('input[type="search"]').clear().type('ca')
       cy.wait(2000)
@@ -22,6 +22,5 @@ describe('My second test', () => {
       cy.contains('button', 'Place Order').click();
      
     })
-
-  
+ 
   })

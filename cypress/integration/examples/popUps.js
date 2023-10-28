@@ -6,17 +6,19 @@ describe('handling popUps', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
       });
 
-    it ('automate popUps',() =>{
+    it ('validate alert popUp',() =>{
        cy.get('#alertbtn').click()
-       cy.get('#confirmbtn').click()
        cy.on('window:alert',(msg)=>{
         expect(msg).to.equal('Hello , share this practice page and share your knowledge')
        })
-       cy.on('window:confirm',(msg)=>{
-        expect(msg).to.equal('Hello , Are you sure you want to confirm?')
-       })
     })
 
+    it ('validate confirmation popUp',() =>{
+      cy.get('#confirmbtn').click()
+      cy.on('window:confirm',(msg)=>{
+       expect(msg).to.equal('Hello , Are you sure you want to confirm?')
+      })
+   })
  
  } )
 
