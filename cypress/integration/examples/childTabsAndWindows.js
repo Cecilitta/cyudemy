@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+/// <reference types= "Cypress"/>
 
 describe('handling child tabs', () => {
     
@@ -6,7 +6,7 @@ describe('handling child tabs', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
       });
 
-    it ('navigate through child tab',() =>{
+    it ('verify the navigation through child tab',() =>{
       cy.get('#opentab').invoke('removeAttr','target').click()
       cy.origin('https://www.qaclickacademy.com/',()=>{
         cy.get('#navbarSupportedContent > ul > li:nth-child(4) > a').click()
@@ -14,7 +14,7 @@ describe('handling child tabs', () => {
       })
    })
 
-    it ('navigate through child window',() =>{
+    it ('verify the navigation through child window',() =>{
     cy.get('#openwindow').invoke('removeAttr','target').click()
     cy.origin('https://www.qaclickacademy.com/',()=>{
       cy.url().should('eq','https://www.qaclickacademy.com/')

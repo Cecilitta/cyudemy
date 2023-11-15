@@ -3,7 +3,7 @@
 
 describe('select products and checkOut', () => {
 
-    it('Select products and checkOut', () => {
+    it('verify the correct functionality of Selection and checkOut of products', () => {
       cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
       cy.get('input[type="search"]').clear().type('ca')
       cy.wait(2000)

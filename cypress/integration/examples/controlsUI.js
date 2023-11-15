@@ -6,13 +6,13 @@ describe('handling web controls UI', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
       });
 
-    it ('automate checkboxes',() =>{
+    it ('verify the correct functionality of checkboxes',() =>{
         cy.get('input#checkBoxOption1').check().should('be.checked').and('have.value','option1')
         cy.get('input#checkBoxOption1').uncheck().should('not.be.checked')
         cy.get('input[type="checkbox"]').check(['option2','option3'])
     })
 
-    it ('automate dropdowns',() =>{
+    it ('verify the correct functionality of dropdowns',() =>{
         //static
         cy.get('select#dropdown-class-example').select('option2').should('have.value','option2')
 
@@ -26,7 +26,7 @@ describe('handling web controls UI', () => {
         cy.get('#autocomplete').should('have.value', 'India')
     })
 
-    it ('automate visible/invisible elements',() =>{
+    it ('verify the correct functionality of visible/invisible elements',() =>{
     cy.get('#displayed-text').as('textInput')
     cy.get('@textInput').should('be.visible')
     cy.get('#hide-textbox').click()
@@ -35,7 +35,7 @@ describe('handling web controls UI', () => {
     cy.get('@textInput').should('be.visible')
     })
 
-    it ('automate radioButtons',() =>{
+    it ('verify the correct functionality of radioButtons',() =>{
         cy.get('input[value="radio1"]').click().should('be.checked').and('have.value','radio1')
         cy.get('input[value="radio2"]').click()
         cy.get('input[value="radio1"]').should('not.be.checked')

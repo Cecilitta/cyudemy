@@ -1,9 +1,9 @@
 /// <reference types="Cypress" />
 
 
-describe('Search products and validate logo brand', () => {
+describe('Search products and verify logo brand', () => {
 
-    it('Search products', () => {
+    it('verify the correct functionality of the searchbar and the "add to cart" button', () => {
       cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
       cy.get('input[type="search"]').clear().type('ca')
       cy.wait(2000)
@@ -19,7 +19,7 @@ describe('Search products and validate logo brand', () => {
       })
     })
 
-    it ('logo brand', () => {
+    it ('verify that the logo brand is correct', () => {
       cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
       cy.get('.brand').then(function(logoElement){
         cy.log(logoElement.text())
